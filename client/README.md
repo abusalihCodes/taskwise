@@ -37,11 +37,3 @@ cd client
 npm install
 # Add .env with VITE_API_URL=http://localhost:4000/api
 npm run dev
-```
-```
-
-Then push to GitHub:
-```
-git add .
-git commit -m "docs: add README"
-git push
