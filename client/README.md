@@ -1,16 +1,47 @@
-# React + Vite
+# TaskWise 🧠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered task manager built with the MERN stack.
 
-Currently, two official plugins are available:
+## Live Demo
+🔗 [taskwise-seven.vercel.app](https://taskwise-seven.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- 🔐 JWT Authentication (Register/Login)
+- ✅ Full Task CRUD (Create, Read, Update, Delete)
+- 🤖 AI Summarize powered by Groq LLM
+- ✏️ Inline task editing
+- 📊 Task completion counter
+- 🔒 Protected routes
+- 📱 Responsive dark UI
 
-## React Compiler
+## Tech Stack
+**Frontend:** React 18, Vite, Tailwind CSS, React Router  
+**Backend:** Node.js, Express, MongoDB, Mongoose  
+**Auth:** JWT, bcrypt  
+**AI:** Groq API (Llama 3)  
+**Deployment:** Vercel (frontend) + Render (backend)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+### Backend
+```bash
+cd server
+npm install
+# Add .env with MONGO_URI, JWT_SECRET, GROQ_API_KEY
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+```bash
+cd client
+npm install
+# Add .env with VITE_API_URL=http://localhost:4000/api
+npm run dev
+```
+```
+
+Then push to GitHub:
+```
+git add .
+git commit -m "docs: add README"
+git push
