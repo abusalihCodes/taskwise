@@ -43,7 +43,7 @@ router.post("/summarize", auth, async (req, res, next) => {
     );
 
     const data = await response.json();
-
+    console.log("GROQ RESPONSE:", data);
     if (!response.ok) {
       const error = new Error(
         data?.error?.message || "Failed to generate task summary"
