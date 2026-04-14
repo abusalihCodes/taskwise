@@ -116,7 +116,7 @@ export default function Dashboard() {
   async function summarizeTask(task) {
     setSummarizeError({ taskId: null, message: "" });
     setSummarizeState({
-      taskId: task._id,
+      taskId: String(task._id),
       loading: true,
       result: "",
     });
@@ -128,18 +128,18 @@ export default function Dashboard() {
       });
 
       setSummarizeState({
-        taskId: task._id,
+        taskId: String(task._id),
         loading: false,
         result: data?.summary || "",
       });
     } catch (err) {
       setSummarizeState({
-        taskId: task._id,
+        taskId:String(task._id),
         loading: false,
         result: "",
       });
       setSummarizeError({
-        taskId: task._id,
+        taskId: String(task._id),
         message: getErrorMessage(err, "Could not summarize this task."),
       });
     }
@@ -408,6 +408,12 @@ async function saveEdit(taskId) {
                             {task.description}
                           </p>
                         ) : null}
+                        {summarizeState.taskId === String(task._id) &&
+                          summarizeState.result ? (
+                            <div className="mt-3 rounded-lg border border-violet-500/30 bg-violet-500/10 px-3 py-2 text-sm text-violet-100">
+                              {summarizeState.result}
+                            </div>
+                          ) : null}
                       </>
                     )}
                       {summarizeError.taskId === task._id &&
