@@ -4,6 +4,8 @@ const auth = require("../middleware/auth");
 const router = express.Router();
 
 router.post("/summarize", auth, async (req, res, next) => {
+   console.log("ENV CHECK:", process.env.GROQ_API_KEY);
+  console.log("SUMMARIZE ROUTE HIT");
   try {
     const { title, description = "" } = req.body || {};
 
